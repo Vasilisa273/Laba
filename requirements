@@ -1,0 +1,4 @@
+Django==1.11.22
+djangorestframework==3.9.4
+django-filter~=1.1
+django-role-permissions==2.2.1
