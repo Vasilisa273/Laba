@@ -1,6 +1,7 @@
 from __future__ import unicode_literals
 
 import re
+import codecs
 from django.contrib.sessions.backends import file
 from django.core.management.base import BaseCommand
 from polls.models import RusWord, EnWord
@@ -27,3 +28,32 @@ class Command(BaseCommand):
         self.process_file(str1)
 
     def process_file(self, file1):
+
+        new_mas = []
+        splitted = codecs.open('import_laba', 'r', encoding='utf-8').read().splitlines()
+        for spl in splitted:
+            if spl != str(""):
+                new_mas.append(spl)
+
+        for new in new_mas:
+
+            regex_enword_temp = re.search(r'^[a-zA-Z]', new)
+            if regex_enword_temp is not None:
+                regex_enword = regex_enword_temp.group()
+            else:
+                regex_enword =''
+
+            regex_rusword_temp = re.search(r'^[а-яА-Я]', new)
+            if regex_rusword_temp is not None:
+                regex_rusword = regex_rusword_temp.group()
+            else:
+                regex_rusword =''
+
+            english = regex_enword.encode('utf-8')
+            russia = regex_rusword.encode('utf-8')
+
+            enword = EnWord(enword=english)
+            enword.save()
+            rusword = RusWord(rusword=russia)
+            rusword.save()
+
