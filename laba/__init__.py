@@ -1,1 +1,1 @@
-default_app_config = 'laba.apps.labaConfig'
+default_app_config = 'polls.apps.labaConfig'

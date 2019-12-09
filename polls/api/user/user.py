@@ -1,8 +1,8 @@
 from rest_framework import generics, permissions
-from laba.models import User
+from polls.models import User
 from django.http import JsonResponse
 from rest_framework.decorators import api_view, permission_classes
-from laba.serializer import UserSerializer
+from polls.serializer import UserSerializer
 
 
 class UserList(generics.ListCreateAPIView):

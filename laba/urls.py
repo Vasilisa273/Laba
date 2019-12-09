@@ -17,10 +17,8 @@ from django.conf.urls import include, url
 from django.contrib import admin
 
 urlpatterns = [
-    url(r'^enword/', include('laba.api.enword.urls', namespace='enword')),
-    url(r'^rusword/', include('laba.api.rusword.urls', namespace='rusword')),
-    url(r'^api/', include('laba.api.urls', namespace='api')),
-    url(r'laba', include('laba.urls', namespace='laba')),
+    url(r'^enword/', include('polls.api.enword.urls', namespace='enword')),
+    url(r'^rusword/', include('polls.api.rusword.urls', namespace='rusword')),
     url('api-auth', include('rest_framework.urls', namespace='rest_framework')),
     url('admin/', admin.site.urls),
 ]

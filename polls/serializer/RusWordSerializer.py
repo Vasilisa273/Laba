@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from laba.models import RusWord
+from polls.models import RusWord
 
 
 class RusWordSerializer(serializers.ModelSerializer):

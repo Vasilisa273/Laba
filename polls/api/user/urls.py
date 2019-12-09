@@ -1,6 +1,6 @@
 from __future__ import unicode_literals
 from django.conf.urls import url
-from laba.api.user.user import UserDetail, UserList, current_user
+from polls.api.user.user import UserDetail, UserList
 
 urlpatterns = [
     url(r'(?P<pk>[0-9]+)/$', UserDetail.as_view()),

@@ -1,6 +1,6 @@
 from rest_framework import generics
-from laba.serializer.EnWordSerializer import EnWordSerializer
-from laba.models import EnWord
+from polls.serializer.EnWordSerializer import EnWordSerializer
+from polls.models import EnWord
 
 
 class EnList(generics.ListCreateAPIView):

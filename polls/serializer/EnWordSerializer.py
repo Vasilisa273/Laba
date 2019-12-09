@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from laba.models import EnWord
+from polls.models import EnWord
 
 
 class EnWordSerializer(serializers.ModelSerializer):

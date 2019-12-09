@@ -8,9 +8,8 @@ class User(AbstractUser):
 
 class RusWord(models.Model):
     value = models.TextField(null=False, default='')
-    id_en = models.ManyToOneRel('EnWord')
 
 
 class EnWord(models.Model):
     value = models.TextField(null=False, default='')
-    id_rus = models.ManyToOneRel('RusWord')
+    id_rus = models.ManyToManyField('RusWord')

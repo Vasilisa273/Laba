@@ -1,6 +1,6 @@
 from django.core.management import BaseCommand
 
-from laba.models import User
+from polls.models import User
 
 
 class Command(BaseCommand):
